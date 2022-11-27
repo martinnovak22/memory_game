@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Marhey&display=swap");
+
+body {
+  height: 95vh;
+  font-family: "Marhey", sans-serif;
+  color: #231942;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c8b8db;
+}
+
+h1 {
+  font-size: 64px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+.App {
+  width: 1000px;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin-top: 25px;
+
+  box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
+
+  background-color: #9f86c0;
+}
+
+.themeLink {
+  font-size: 24px;
+}
+
+.levelBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  margin-bottom: 24px;
+}
+
+.levelButton {
+  width: 100px;
+  height: 45px;
+  border: solid 1px black;
+  background-color: #c8b8db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mainFrame {
+  width: 100%;
+  height: 100%;
+}
+
+.gameBoard {
+  width: 850px;
+  height: 850px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+.nextLevelButton {
+  height: 35px;
+  border: solid 1px black;
+  background-color: #c8b8db;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cardBox {
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: #9f86c0;
+  background-image: linear-gradient(135deg, #9f86c0 0%, #c8b8db 100%);
+}
+
+.startBox {
+  margin-bottom: 10px;
+}
+
+.noLink {
+  text-decoration: none;
+  color: #231942;
+}
