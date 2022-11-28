@@ -13,7 +13,13 @@ const UNLOCKEDLEVELS = {
 
 function App() {
   const [cards, setCards] = useState([]);
-  const [levels, setLevels] = useState(UNLOCKEDLEVELS);
+
+  const [levels, setLevels] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("levels");
+    const initialValue = JSON.parse(saved);
+    return initialValue || UNLOCKEDLEVELS;
+  });
 
   const handleCards = (cards) => {
     setCards(cards);
@@ -24,8 +30,8 @@ function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem("levels", JSON.stringify(UNLOCKEDLEVELS));
-  }, []);
+    localStorage.setItem("levels", JSON.stringify(levels));
+  }, [levels]);
 
   return (
     <BrowserRouter>
