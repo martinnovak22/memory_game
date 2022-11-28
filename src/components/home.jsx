@@ -4,7 +4,7 @@ import "animate.css";
 export default function Home() {
   return (
     <div className="App">
-      <h1>Pexeso</h1>
+      <h1>Dvojjazyčné pexeso</h1>
       <div className={"startBox"}>
         <h2> Zvolte si jedno z témat </h2>
         <div>
