@@ -31,6 +31,11 @@ export default function LevelLayout({ handleCards, levels }) {
     <>
       <div className={"App"}>
         <div className={"mainFrame"}>
+          <div className={"backLink"}>
+            <Link to={"/"} className={"noLink"}>
+              Zpět na hlavní menu
+            </Link>
+          </div>
           <div className={"levelBox"}>
             <Link to={"1"}>
               <button
@@ -76,11 +81,6 @@ export default function LevelLayout({ handleCards, levels }) {
           </div>
 
           <Outlet />
-        </div>
-        <div>
-          <Link to={"/"} className={"noLink backLink"}>
-            Zpět na hlavní menu
-          </Link>
         </div>
       </div>
     </>

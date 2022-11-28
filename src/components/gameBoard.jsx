@@ -80,13 +80,11 @@ export default function GameBoard({
 
   if (notMatched) {
     return (
-      <div>
         <div className={"gameBoard"}>
           {cards.map((card) =>
             Card({ card, handleChoice, choiceOne, choiceTwo })
           )}
         </div>
-      </div>
     );
   }
   if (!notMatched && cards.length !== 0 && Number(tema[2]) !== 3) {
@@ -98,4 +96,9 @@ export default function GameBoard({
       </div>
     );
   }
+  return(
+    <div>
+      <p>Dokončil jsi toto téma, nyní se můžeš vrátit do menu.</p>
+    </div>
+  )
 }

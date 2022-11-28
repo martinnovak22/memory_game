@@ -21,7 +21,7 @@ h2 {
 }
 
 .App {
-  width: 1000px;
+  min-width: 850px;
   height: 85vh;
   display: flex;
   flex-direction: column;
@@ -60,16 +60,20 @@ h2 {
 .mainFrame {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .gameBoard {
-  width: 850px;
-  height: 850px;
+  width: 800px;
+  height: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: 5px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .nextLevelButton {
@@ -81,8 +85,8 @@ h2 {
 }
 
 .cardBox {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -99,4 +103,8 @@ h2 {
 .noLink {
   text-decoration: none;
   color: #231942;
+}
+
+.backLink{
+  margin-bottom: 10px;
 }
