@@ -3,8 +3,8 @@ import { getThemeData, shuffleCards } from "../utils/utils.js";
 
 import data from "../assets/data.json";
 
-export default function LevelLayout({ handleCards, levels }) {
-  // from page url, returns: "/{theme}/{level}
+export default function LevelLayout({ handleCards, levels, handleLevels }) {
+  // from page url, returns: "/{theme}/{level}" => theme[1] theme[2]
   const theme = window.location.pathname.split("/");
 
   // function which fills up array with passed data
@@ -20,12 +20,14 @@ export default function LevelLayout({ handleCards, levels }) {
     return shuffleCards(pexesoArray);
   };
 
+  // checks if level is unlocked
   const isUnlocked = (levels, theme, previousLevel) => {
-    console.log(Number(levels[theme[1]]));
     return !(Number(levels[theme[1]]) >= previousLevel);
   };
 
-  console.log(isUnlocked(levels, theme, 1));
+  const handleReset = () => {
+    handleLevels({ ...levels, [theme[1]]: 0 });
+  };
 
   return (
     <>
@@ -34,6 +36,9 @@ export default function LevelLayout({ handleCards, levels }) {
           <div className={"backLink"}>
             <Link to={"/"} className={"noLink"}>
               Zpět na hlavní menu
+            </Link>
+            <Link to={""} onClick={() => handleReset()} className={"noLink"}>
+              Vynulovat toto téma
             </Link>
           </div>
           <div className={"levelBox"}>
