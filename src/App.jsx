@@ -39,7 +39,7 @@ function App() {
         <Route path={"/"} element={<Home />}></Route>
         <Route
           path="/:temaId"
-          element={<LevelLayout handleCards={handleCards} levels={levels} />}
+          element={<LevelLayout handleCards={handleCards} handleLevels={handleLevels} levels={levels} />}
         >
           <Route
             path={":level"}

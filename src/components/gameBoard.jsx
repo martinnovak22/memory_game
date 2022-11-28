@@ -3,6 +3,12 @@ import data from "../assets/data.json";
 import { useEffect, useState } from "react";
 import { getThemeData, isCardMatched, sleep } from "../utils/utils.js";
 
+const themes = {
+  prirodni: "Přírodní",
+  technicke: "Technické",
+  rodinne: "Rodinné",
+};
+
 export default function GameBoard({
   cards,
   handleCards,
@@ -13,11 +19,11 @@ export default function GameBoard({
   const [choiceTwo, setChoiceTwo] = useState(null);
 
   // from page url, returns: "/{theme}/{level}
-  const tema = window.location.pathname.split("/");
+  const theme = window.location.pathname.split("/");
 
   // getting cards for choice comparison
   const getCardOne = (data) => {
-    return getThemeData(data, tema[1], tema[2]).find((word) => {
+    return getThemeData(data, theme[1], theme[2]).find((word) => {
       if (word.word.cz === choiceOne.word || word.word.eng === choiceOne.word) {
         return word;
       }
@@ -25,7 +31,7 @@ export default function GameBoard({
   };
 
   const getCardTwo = (data) => {
-    return getThemeData(data, tema[1], tema[2]).find((word) => {
+    return getThemeData(data, theme[1], theme[2]).find((word) => {
       if (word.word.cz === choiceTwo.word || word.word.eng === choiceTwo.word) {
         return word;
       }
@@ -39,8 +45,9 @@ export default function GameBoard({
   };
 
   // unlocks new level after button click
-  const unlockLevel = () => {
-    handleLevels({ ...levels, [tema[1]]: [tema[2]] });
+  const unlockLevel = (e) => {
+    e.currentTarget.style.visibility = "hidden";
+    handleLevels({ ...levels, [theme[1]]: [theme[2]] });
   };
   // choice handler
   const handleChoice = async (card) => {
@@ -73,32 +80,37 @@ export default function GameBoard({
     checkChoices().catch((err) => console.log(err));
   }, [choiceOne, choiceTwo]);
 
-  // function which uses util "isCardMatched" to check, if all the cards are matched
+  // function which uses util "isCardMatched" to check, if all the cards are matched or not
   const notMatched = cards.some((card) => {
     return isCardMatched(card);
   });
 
   if (notMatched) {
     return (
-        <div className={"gameBoard"}>
-          {cards.map((card) =>
-            Card({ card, handleChoice, choiceOne, choiceTwo })
-          )}
-        </div>
+      <div className={"gameBoard"}>
+        {cards.map((card) =>
+          Card({ card, handleChoice, choiceOne, choiceTwo })
+        )}
+      </div>
     );
   }
-  if (!notMatched && cards.length !== 0 && Number(tema[2]) !== 3) {
+  if (!notMatched && cards.length !== 0 && Number(theme[2]) !== 3) {
     return (
       <div>
-        <button onClick={() => unlockLevel()} className={"nextLevelButton"}>
+        <button onClick={(e) => unlockLevel(e)} className={"nextLevelButton"}>
           Vyhrál jsi, klikni pro pokračování!
         </button>
       </div>
     );
   }
-  return(
-    <div>
-      <p>Dokončil jsi toto téma, nyní se můžeš vrátit do menu.</p>
+  return (
+    <div className={"endDiv"}>
+      <h1>Gratulujeme!</h1>
+      <h2>Dokončil jsi téma: {themes[theme[1]]}</h2>
+      <p className={"endParagraph"}>
+        Nyní můžeš pokračovat do menu, zopakovat si kteroukoliv z úrovní, či si
+        celé téma vynulovat.
+      </p>
     </div>
-  )
+  );
 }
