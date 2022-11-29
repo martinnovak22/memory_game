@@ -59,7 +59,12 @@ export default function GameBoard({
     );
   };
 
-  //useEffect for card state setting
+  // function which uses util "isCardMatched" to check, if all the cards are matched or not
+  const notMatched = cards.some((card) => {
+    return isCardMatched(card);
+  });
+
+  // useEffect for card state setting
   useEffect(() => {
     async function checkChoices() {
       if (choiceOne && choiceTwo) {
@@ -72,7 +77,6 @@ export default function GameBoard({
               return card;
             });
           });
-
           resetTurn();
           return;
         }
@@ -83,10 +87,12 @@ export default function GameBoard({
     checkChoices().catch((err) => console.log(err));
   }, [choiceOne, choiceTwo]);
 
-  // function which uses util "isCardMatched" to check, if all the cards are matched or not
-  const notMatched = cards.some((card) => {
-    return isCardMatched(card);
-  });
+  //  useEffect for last level unlocking (shows marker in main menu)
+  useEffect(() => {
+    if (Number(theme[2]) === 3 && notMatched === false) {
+      unlockLevel();
+    }
+  }, [notMatched]);
 
   if (notMatched) {
     return (
@@ -97,6 +103,7 @@ export default function GameBoard({
       </div>
     );
   }
+
   if (!notMatched && cards.length !== 0 && Number(theme[2]) !== 3) {
     return (
       <div>
@@ -106,9 +113,9 @@ export default function GameBoard({
       </div>
     );
   }
-  unlockLevel();
   startConfetti();
-  sleep(2000).then((r) => stopConfetti());
+  sleep(5000).then(() => stopConfetti());
+
   return (
     <div className={"endDiv"}>
       <h1>Gratulujeme!</h1>
