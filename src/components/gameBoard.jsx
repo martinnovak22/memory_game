@@ -49,6 +49,7 @@ export default function GameBoard({
     e.currentTarget.style.visibility = "hidden";
     handleLevels({ ...levels, [theme[1]]: [theme[2]] });
   };
+
   // choice handler
   const handleChoice = async (card) => {
     await sleep(100).then(() =>
@@ -103,6 +104,8 @@ export default function GameBoard({
       </div>
     );
   }
+  startConfetti();
+  sleep(2000).then((r) => stopConfetti());
   return (
     <div className={"endDiv"}>
       <h1>Gratulujeme!</h1>

@@ -11,6 +11,12 @@ body {
   background-color: #c8b8db;
 }
 
+#confetti-canvas {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 h1 {
   font-size: 64px;
   margin: 0;
