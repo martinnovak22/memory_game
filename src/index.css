@@ -134,3 +134,8 @@ h2 {
   max-width: 600px;
   font-size: 20px;
 }
+
+.checkMark {
+  position: fixed;
+  margin-left: 15px;
+}

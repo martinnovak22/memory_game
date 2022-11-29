@@ -46,7 +46,9 @@ export default function GameBoard({
 
   // unlocks new level after button click
   const unlockLevel = (e) => {
-    e.currentTarget.style.visibility = "hidden";
+    if (e !== undefined) {
+      e.currentTarget.style.visibility = "hidden";
+    }
     handleLevels({ ...levels, [theme[1]]: [theme[2]] });
   };
 
@@ -104,6 +106,7 @@ export default function GameBoard({
       </div>
     );
   }
+  unlockLevel();
   startConfetti();
   sleep(2000).then((r) => stopConfetti());
   return (

@@ -36,10 +36,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/"} element={<Home />}></Route>
+        <Route path={"/"} element={<Home levels={levels} />}></Route>
         <Route
           path="/:temaId"
-          element={<LevelLayout handleCards={handleCards} handleLevels={handleLevels} levels={levels} />}
+          element={
+            <LevelLayout
+              handleCards={handleCards}
+              handleLevels={handleLevels}
+              levels={levels}
+            />
+          }
         >
           <Route
             path={":level"}
