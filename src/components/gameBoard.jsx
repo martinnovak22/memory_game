@@ -107,7 +107,10 @@ export default function GameBoard({
   if (!notMatched && cards.length !== 0 && Number(theme[2]) !== 3) {
     return (
       <div>
-        <button onClick={(e) => unlockLevel(e)} className={"nextLevelButton"}>
+        <button
+          onClick={(e) => unlockLevel(e)}
+          className={"nextLevelButton button"}
+        >
           Vyhrál jsi, klikni pro pokračování!
         </button>
       </div>

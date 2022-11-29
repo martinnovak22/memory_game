@@ -5,7 +5,7 @@ import GameBoard from "./components/gameBoard.jsx";
 import Home from "./components/home.jsx";
 import LevelLayout from "./components/levelLayout.jsx";
 
-const UNLOCKEDLEVELS = {
+export const UNLOCKEDLEVELS = {
   prirodni: 0,
   technicke: 0,
   rodinne: 0,
@@ -21,14 +21,17 @@ function App() {
     return initialValue || UNLOCKEDLEVELS;
   });
 
+  // card setter
   const handleCards = (cards) => {
     setCards(cards);
   };
 
+  // level setter
   const handleLevels = (levels) => {
     setLevels(levels);
   };
 
+  // useEffect for storing data in local storage
   useEffect(() => {
     localStorage.setItem("levels", JSON.stringify(levels));
   }, [levels]);
@@ -36,7 +39,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/"} element={<Home levels={levels} />}></Route>
+        <Route
+          path={"/"}
+          element={<Home levels={levels} handleLevels={handleLevels} />}
+        ></Route>
         <Route
           path="/:temaId"
           element={

@@ -1,11 +1,25 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { UNLOCKEDLEVELS } from "../App.jsx";
 import "animate.css";
 
-export default function Home({ levels }) {
+export default function Home({ levels, handleLevels }) {
+  // checks if theme is done, return checkmark if true
   const isDone = (theme) => {
-    if (levels[theme][0] === "3") {
+    if (Number(levels[theme]) === 3) {
       return <span className={"checkMark"}>✅</span>;
     }
+  };
+
+  // handles reset of game, gives chance to think about it
+  let firstClick;
+  const handleGameReset = (e) => {
+    firstClick = firstClick === 0 ? 1 : 0;
+    if (firstClick === 0) {
+      e.target.innerHTML = "Potvrdit vynulování hry";
+      return;
+    }
+    handleLevels(UNLOCKEDLEVELS);
+    e.target.innerHTML = "Vynulovat celou hru";
   };
 
   return (
@@ -28,8 +42,13 @@ export default function Home({ levels }) {
             <p className={"themeLink"}>Rodinné {isDone("rodinne")}</p>
           </Link>
         </div>
+        <button
+          onClick={(e) => handleGameReset(e)}
+          className={"resetButton button"}
+        >
+          Vynulovat celou hru
+        </button>
       </div>
-      <Outlet />
     </div>
   );
 }
