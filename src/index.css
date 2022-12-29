@@ -51,7 +51,6 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-
   margin-bottom: 24px;
 }
 
@@ -70,6 +69,10 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buttonHolder {
+  height: 40px;
 }
 
 .gameBoard {
@@ -94,17 +97,81 @@ h2 {
   height: 35px;
 }
 
-.cardBox {
-  max-width: 100%;
-  max-height: 100%;
+.card {
+  position: relative;
+}
+
+.holder {
+  width: 100%;
+  height: 100%;
+}
+
+.front,
+.back {
   display: flex;
   justify-content: center;
   align-items: center;
   border: black solid 1px;
   border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.front {
   background-color: #9f86c0;
   background-image: linear-gradient(135deg, #9f86c0 0%, #c8b8db 100%);
 }
+
+.back {
+  background: linear-gradient(
+    90deg,
+    rgba(159, 134, 192, 1) 35%,
+    rgba(97, 81, 117, 1) 100%
+  );
+}
+
+.unmount {
+  animation: show 0.3s linear;
+}
+
+.hide {
+  animation: hide 0.3s linear;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+
+/*Flip animation start*/
+.card .front {
+  transform: rotateY(90deg);
+  transition: all ease-in 0.4s;
+  position: absolute;
+}
+
+.flipped .front {
+  transform: rotateY(0deg);
+  transition-delay: 0s;
+}
+
+.card .back {
+  transition: all ease-in 0.4s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
+/*Flip Animation End*/
 
 .startBox {
   height: 100%;
@@ -148,4 +215,20 @@ h2 {
   height: 50px;
   margin-top: auto;
   font-size: 18px;
+}
+
+.czFlag {
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  left: 30%;
+  rotate: -35deg;
+}
+
+.usFlag {
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  right: 30%;
+  rotate: 35deg;
 }

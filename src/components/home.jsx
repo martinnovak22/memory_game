@@ -24,22 +24,54 @@ export default function Home({ levels, handleLevels }) {
 
   return (
     <div className="App">
-      <h1>Dvojjazyčné pexeso</h1>
+      <h1 className={"animate__animated animate__bounceIn"}>
+        Dvojjazyčné pexeso
+      </h1>
+      <img
+        src={"src/assets/images/cz_flag.jpg"}
+        alt={"vlajka česka"}
+        className={"czFlag animate__animated animate__zoomInLeft animate__slow"}
+      />
+      <img
+        src={"src/assets/images/us_flag.jpg"}
+        alt={"vlajka USA"}
+        className={
+          "usFlag animate__animated animate__zoomInRight animate__slow"
+        }
+      />
       <div className={"startBox"}>
         <h2> Zvolte si jedno z témat </h2>
         <div>
-          <Link to="/technika" className={"noLink"}>
-            <p className={"themeLink"}>Technika {isDone("technika")}</p>
+          <Link to="/technika" className={"noLink "}>
+            <p
+              className={
+                "themeLink animate__animated animate__bounce animate__delay-2s"
+              }
+            >
+              Technika {isDone("technika")}
+            </p>
           </Link>
         </div>
         <div>
           <Link to="/priroda" className={"noLink"}>
-            <p className={"themeLink"}>Příroda {isDone("priroda")}</p>
+            <p
+              className={
+                "themeLink animate__animated animate__bounce animate__delay-3s"
+              }
+            >
+              Příroda {isDone("priroda")}
+            </p>
           </Link>
         </div>
         <div>
           <Link to="/rodina" className={"noLink"}>
-            <p className={"themeLink"}>Rodina {isDone("rodina")}</p>
+            <p
+              className={
+                "themeLink animate__animated animate__bounce animate__delay-4s"
+              }
+            >
+              Rodina {isDone("rodina")}
+            </p>
           </Link>
         </div>
         <button
