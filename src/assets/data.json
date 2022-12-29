@@ -1,5 +1,5 @@
 {
-  "prirodni": {
+  "priroda": {
     "1": [
       {
         "word": { "cz": "strom", "eng": "tree" },
@@ -19,7 +19,7 @@
       }
     ]
   },
-  "technicke": {
+  "technika": {
     "1": [
       {
         "word": { "cz": "počítač", "eng": "computer" },
@@ -39,7 +39,7 @@
       }
     ]
   },
-  "rodinne": {
+  "rodina": {
     "1": [
       {
         "word": { "cz": "maminka", "eng": "mom" },

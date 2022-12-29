@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import "./index.css";
+import "animate.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GameBoard from "./components/gameBoard.jsx";
 import Home from "./components/home.jsx";
 import LevelLayout from "./components/levelLayout.jsx";
 
 export const UNLOCKEDLEVELS = {
-  prirodni: 0,
-  technicke: 0,
-  rodinne: 0,
+  priroda: 0,
+  technika: 0,
+  rodina: 0,
 };
 
 function App() {

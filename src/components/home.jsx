@@ -28,18 +28,18 @@ export default function Home({ levels, handleLevels }) {
       <div className={"startBox"}>
         <h2> Zvolte si jedno z témat </h2>
         <div>
-          <Link to="/technicke" className={"noLink"}>
-            <p className={"themeLink"}>Technické {isDone("technicke")}</p>
+          <Link to="/technika" className={"noLink"}>
+            <p className={"themeLink"}>Technika {isDone("technika")}</p>
           </Link>
         </div>
         <div>
-          <Link to="/prirodni" className={"noLink"}>
-            <p className={"themeLink"}>Přírodní {isDone("prirodni")}</p>
+          <Link to="/priroda" className={"noLink"}>
+            <p className={"themeLink"}>Příroda {isDone("priroda")}</p>
           </Link>
         </div>
         <div>
-          <Link to="/rodinne" className={"noLink"}>
-            <p className={"themeLink"}>Rodinné {isDone("rodinne")}</p>
+          <Link to="/rodina" className={"noLink"}>
+            <p className={"themeLink"}>Rodina {isDone("rodina")}</p>
           </Link>
         </div>
         <button

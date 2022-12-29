@@ -1,0 +1,315 @@
+{
+  "priroda": {
+    "1": [
+      {
+        "word": { "cz": "strom", "eng": "tree" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "květina", "eng": "flower" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "slon", "eng": "elephant" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "jablko", "eng": "apple" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "pes", "eng": "dog" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "kočka", "eng": "cat" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "pomeranč", "eng": "orange" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "hruška", "eng": "pear" },
+        "id": 8
+      }
+
+    ],
+    "2": [
+      {
+        "word": { "cz": "zelí", "eng": "cabbage" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "les", "eng": "forest" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "malina", "eng": "raspberry" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "nosorožec", "eng": "rhino" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "dýně", "eng": "pumpkin" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "tráva", "eng": "grass" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "větev", "eng": "branch" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "lev", "eng": "lion" },
+        "id": 8
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "třešeň", "eng": "cherry" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "pomněnka", "eng": "forget-me-not" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "petržel", "eng": "parsley" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "hroch", "eng": "hippo" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "chřest", "eng": "asparagus" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "ředkvičky", "eng": "radish" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "laň", "eng": "deer" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "vlaštovka", "eng": "swallow" },
+        "id": 8
+      }
+    ]
+  },
+  "technika": {
+    "1": [
+      {
+        "word": { "cz": "počítač", "eng": "computer" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "myš", "eng": "mouse" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "kabel", "eng": "cabel" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "klávesnice", "eng": "keyboard" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "kód", "eng": "code" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "komentář", "eng": "comment" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "složka", "eng": "folder" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "odkaz", "eng": "link" },
+        "id": 8
+      }
+    ],
+    "2": [
+      {
+        "word": { "cz": "nahrát", "eng": "upload" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "obrazovka", "eng": "screen" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "paměť", "eng": "memory" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "heslo", "eng": "password" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "tiskárna", "eng": "printer" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "tlačítko", "eng": "button" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "vynález", "eng": "invention" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "účet", "eng": "account" },
+        "id": 8
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "zálohovat", "eng": "back-up" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "spojení", "eng": "connection" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "přenosný", "eng": "portable" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "přístup", "eng": "access" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "rozhraní", "eng": "interface" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "nabíjet", "eng": "charge" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "přístroj", "eng": "gadget" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "průlom", "eng": "breakthrough" },
+        "id": 8
+      }
+    ]
+  },
+  "rodina": {
+    "1": [
+      {
+        "word": { "cz": "maminka", "eng": "mom" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "tatínek", "eng": "dad" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "chlapec", "eng": "boy" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "lidé", "eng": "people" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "manželka", "eng": "wife" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "syn", "eng": "son" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "manžel", "eng": "husband" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "dítě", "eng": "child" },
+        "id": 8
+      }
+    ],
+    "2": [
+      {
+        "word": { "cz": "soused", "eng": "neighbout" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "spolubydlící", "eng": "roommate" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "vkun", "eng": "grandson" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "synovec", "eng": "nephew" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "prarodič", "eng": "grandparent" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "bratranec", "eng": "cousin" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "dvojčata", "eng": "twins" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "dáma", "eng": "lady" },
+        "id": 8
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "teta", "eng": "aunt" },
+        "id": 1
+      },
+      {
+        "word": { "cz": "batole", "eng": "toddler" },
+        "id": 2
+      },
+      {
+        "word": { "cz": "choť", "eng": "spouse" },
+        "id": 3
+      },
+      {
+        "word": { "cz": "dědic", "eng": "heir" },
+        "id": 4
+      },
+      {
+        "word": { "cz": "kmotr", "eng": "godfather" },
+        "id": 5
+      },
+      {
+        "word": { "cz": "předek", "eng": "ancestor" },
+        "id": 6
+      },
+      {
+        "word": { "cz": "snoubenec", "eng": "fiance" },
+        "id": 7
+      },
+      {
+        "word": { "cz": "vdova", "eng": "widow" },
+        "id": 8
+      }
+    ]
+  }
+}
