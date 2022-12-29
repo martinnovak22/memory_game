@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { getThemeData, isCardMatched, sleep } from "../utils/utils.js";
 
 const themes = {
-  prirodni: "Přírodní",
-  technicke: "Technické",
-  rodinne: "Rodinné",
+  priroda: "Příroda",
+  technika: "Technika",
+  rodina: "Rodina",
 };
 
 export default function GameBoard({
@@ -17,6 +17,8 @@ export default function GameBoard({
 }) {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
+
+  const [next, setNext] = useState(false);
 
   // from page url, returns: "/{theme}/{level}
   const theme = window.location.pathname.split("/");
@@ -94,12 +96,37 @@ export default function GameBoard({
     }
   }, [notMatched]);
 
-  if (notMatched) {
+  // resets variable "next", so the level revision is possible
+  useEffect(() => {
+    if (next) {
+      setNext(false);
+    }
+  }, [cards]);
+
+  if (notMatched || !next) {
     return (
-      <div className={"gameBoard"}>
-        {cards.map((card) =>
-          Card({ card, handleChoice, choiceOne, choiceTwo })
-        )}
+      <div>
+        <div className={"buttonHolder"}>
+          {notMatched ? null : (
+            <button
+              onClick={() => setNext(true)}
+              className={"nextLevelButton button"}
+            >
+              Slovíčka jsem si prohlédl/a.
+            </button>
+          )}
+        </div>
+
+        <div className={"gameBoard"}>
+          {cards.map((card) => (
+            <Card
+              key={card.word}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+            />
+          ))}
+        </div>
       </div>
     );
   }
@@ -111,7 +138,7 @@ export default function GameBoard({
           onClick={(e) => unlockLevel(e)}
           className={"nextLevelButton button"}
         >
-          Vyhrál jsi, klikni pro pokračování!
+          Vyhrál/a jsi, klikni pro pokračování!
         </button>
       </div>
     );
