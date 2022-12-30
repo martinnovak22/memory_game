@@ -1,4 +1,5 @@
 export function Card({ card, handleChoice, flipped }) {
+  // sets card as choice one/two
   const handleClick = () => {
     handleChoice(card);
   };

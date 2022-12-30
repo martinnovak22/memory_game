@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { UNLOCKEDLEVELS } from "../App.jsx";
-import "animate.css";
 
 export default function Home({ levels, handleLevels }) {
   // checks if theme is done, return checkmark if true
@@ -10,16 +9,20 @@ export default function Home({ levels, handleLevels }) {
     }
   };
 
-  // handles reset of game, gives chance to think about it
+  // handles reset of game, gives chance to re-think it
   let firstClick;
   const handleGameReset = (e) => {
     firstClick = firstClick === 0 ? 1 : 0;
     if (firstClick === 0) {
       e.target.innerHTML = "Potvrdit vynulování hry";
+      e.target.style.color = "#ff3333";
+      e.target.style.borderWidth = "2px";
       return;
     }
     handleLevels(UNLOCKEDLEVELS);
     e.target.innerHTML = "Vynulovat celou hru";
+    e.target.style.color = "#000";
+    e.target.style.borderWidth = "1px";
   };
 
   return (

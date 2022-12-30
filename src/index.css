@@ -28,15 +28,14 @@ h2 {
 
 .App {
   min-width: 850px;
-  height: 85vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px;
   border: 1px solid black;
   border-radius: 15px;
-  margin-top: 25px;
-
+  position: relative;
   box-shadow: 0 10px 20px 5px rgba(0, 0, 0, 0.5);
 
   background-color: #9f86c0;
@@ -51,7 +50,7 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 
 .levelButton {
@@ -66,13 +65,15 @@ h2 {
 .mainFrame {
   width: 100%;
   height: 100%;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .buttonHolder {
-  height: 40px;
+  height: 35px;
+  margin-bottom: 10px;
 }
 
 .gameBoard {
@@ -99,6 +100,7 @@ h2 {
 
 .card {
   position: relative;
+  font-size: 22px;
 }
 
 .holder {
@@ -190,7 +192,7 @@ h2 {
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .endDiv {
@@ -221,7 +223,7 @@ h2 {
   width: 250px;
   height: 150px;
   position: absolute;
-  left: 30%;
+  left: -12%;
   rotate: -35deg;
 }
 
@@ -229,6 +231,22 @@ h2 {
   width: 250px;
   height: 150px;
   position: absolute;
-  right: 30%;
+  right: -12%;
   rotate: 35deg;
+}
+
+@media only screen and (max-width: 1200px) {
+  .czFlag {
+    display: none;
+  }
+  .usFlag {
+    display: none;
+  }
+}
+
+@media only screen and (max-height: 1200px) {
+  .gameBoard {
+    width: 650px;
+    height: 650px;
+  }
 }

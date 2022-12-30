@@ -1,8 +1,11 @@
 import { Card } from "./card.jsx";
-import data from "../assets/data.json";
+
 import { useEffect, useState } from "react";
 import { getThemeData, isCardMatched, sleep } from "../utils/utils.js";
 
+import data from "../assets/data.json";
+
+// theme strings for win part
 const themes = {
   priroda: "Příroda",
   technika: "Technika",
@@ -18,9 +21,10 @@ export default function GameBoard({
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
 
+  // variable, which allows user to check words before going to next level
   const [next, setNext] = useState(false);
 
-  // from page url, returns: "/{theme}/{level}
+  // page url, returns: "/{theme}/{level}" => theme[1] theme[2]
   const theme = window.location.pathname.split("/");
 
   // getting cards for choice comparison
@@ -138,7 +142,7 @@ export default function GameBoard({
           onClick={(e) => unlockLevel(e)}
           className={"nextLevelButton button"}
         >
-          Vyhrál/a jsi, klikni pro pokračování!
+          Úroveň splněna, klikni pro odemčení další!
         </button>
       </div>
     );

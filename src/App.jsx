@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import "./index.css";
-import "animate.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GameBoard from "./components/gameBoard.jsx";
+
 import Home from "./components/home.jsx";
+import GameBoard from "./components/gameBoard.jsx";
 import LevelLayout from "./components/levelLayout.jsx";
 
+// default variable for unlocked levels
 export const UNLOCKEDLEVELS = {
   priroda: 0,
   technika: 0,
@@ -13,10 +13,11 @@ export const UNLOCKEDLEVELS = {
 };
 
 function App() {
+  // array of played cards
   const [cards, setCards] = useState([]);
 
+  // levels, saved in local storage
   const [levels, setLevels] = useState(() => {
-    // getting stored value
     const saved = localStorage.getItem("levels");
     const initialValue = JSON.parse(saved);
     return initialValue || UNLOCKEDLEVELS;

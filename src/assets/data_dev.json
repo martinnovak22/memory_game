@@ -1,0 +1,62 @@
+{
+  "priroda": {
+    "1": [
+      {
+        "word": { "cz": "strom", "eng": "tree" },
+        "id": 1
+      }
+    ],
+    "2": [
+      {
+        "word": { "cz": "květina", "eng": "flower" },
+        "id": 1
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "slon", "eng": "elephant" },
+        "id": 1
+      }
+    ]
+  },
+  "technika": {
+    "1": [
+      {
+        "word": { "cz": "počítač", "eng": "computer" },
+        "id": 1
+      }
+    ],
+    "2": [
+      {
+        "word": { "cz": "myš", "eng": "mouse" },
+        "id": 1
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "kabel", "eng": "cabel" },
+        "id": 1
+      }
+    ]
+  },
+  "rodina": {
+    "1": [
+      {
+        "word": { "cz": "maminka", "eng": "mom" },
+        "id": 2
+      }
+    ],
+    "2": [
+      {
+        "word": { "cz": "tatínek", "eng": "dad" },
+        "id": 1
+      }
+    ],
+    "3": [
+      {
+        "word": { "cz": "teta", "eng": "aunt" },
+        "id": 2
+      }
+    ]
+  }
+}
