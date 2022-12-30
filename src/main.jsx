@@ -4,6 +4,7 @@ import App from "./App";
 
 import "./index.css";
 import "animate.css";
+import "./utils/confetti.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
