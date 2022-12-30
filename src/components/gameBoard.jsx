@@ -3,6 +3,8 @@ import { Card } from "./card.jsx";
 import { useEffect, useState } from "react";
 import { getThemeData, isCardMatched, sleep } from "../utils/utils.js";
 
+import { startConfetti, stopConfetti } from "../utils/confetti.js";
+
 import data from "../assets/data.json";
 
 // theme strings for win part
@@ -59,10 +61,15 @@ export default function GameBoard({
   };
 
   // choice handler
-  const handleChoice = async (card) => {
-    await sleep(100).then(() =>
-      choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
-    );
+  const handleChoice = (card) => {
+    if (choiceOne) {
+      if (card.word === choiceOne?.word) {
+        return;
+      }
+      setChoiceTwo(card);
+      return;
+    }
+    setChoiceOne(card);
   };
 
   // function which uses util "isCardMatched" to check, if all the cards are matched or not
@@ -78,6 +85,7 @@ export default function GameBoard({
           handleCards((prevState) => {
             return prevState.map((card) => {
               if (card.id === getCardOne(data).id) {
+                console.log(card.word + card.matched);
                 return { ...card, matched: true };
               }
               return card;
