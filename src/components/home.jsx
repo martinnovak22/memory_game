@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { UNLOCKEDLEVELS } from "../App.jsx";
 
+import czFlag from "/src/assets/images/cz_flag.jpg";
+import usFlag from "/src/assets/images/us_flag.jpg";
+
 export default function Home({ levels, handleLevels }) {
   // checks if theme is done, return checkmark if true
   const isDone = (theme) => {
@@ -31,12 +34,12 @@ export default function Home({ levels, handleLevels }) {
         Dvojjazyčné pexeso
       </h1>
       <img
-        src={"src/assets/images/cz_flag.jpg"}
+        src={czFlag}
         alt={"vlajka česka"}
         className={"czFlag animate__animated animate__zoomInLeft animate__slow"}
       />
       <img
-        src={"src/assets/images/us_flag.jpg"}
+        src={usFlag}
         alt={"vlajka USA"}
         className={
           "usFlag animate__animated animate__zoomInRight animate__slow"
