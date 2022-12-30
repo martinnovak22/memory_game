@@ -119,7 +119,7 @@ export default function GameBoard({
     return (
       <div>
         <div className={"buttonHolder"}>
-          {notMatched ? null : (
+          {notMatched || cards.length === 0 ? null : (
             <button
               onClick={() => setNext(true)}
               className={"nextLevelButton button"}
